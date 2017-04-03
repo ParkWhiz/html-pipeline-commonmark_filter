@@ -7,7 +7,7 @@ module HTML
     class CommonmarkFilter < Filter
       def call
         parse_option = context[:parse_option] || :DEFAULT
-        CommonMarker.render_html(@html, parse_option)
+        CommonMarker.render_doc(@html, parse_option).to_html
       end
     end
   end

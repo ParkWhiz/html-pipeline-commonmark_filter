@@ -3,8 +3,8 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 require 'minitest/autorun'
 
 module TestHelpers
-  def assert_equal_html(expected, actual)
-    assert_equal Nokogiri::HTML::DocumentFragment.parse(expected).to_hash, Nokogiri::HTML::DocumentFragment.parse(actual).to_hash
+  def assert_equal_strip_newlines(expected, actual)
+    assert_equal expected.gsub("\n",""), actual.gsub("\n","")
   end
 end
 
